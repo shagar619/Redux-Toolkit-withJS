@@ -13,7 +13,7 @@ const initialState = [
 ]
 
 
-const counterSlice = createSlice({
+export const counterSlice = createSlice({
      name: "counters",
      initialState,
      reducers: {
