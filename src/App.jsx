@@ -17,6 +17,8 @@ function App() {
 
   const [ counters, setCounters ] = useState(initialCounters);
 
+  const totalCount = counters.reduce((sum, current) => sum + current.value, 0);
+
   const handleIncrement = (counterId) => {
     const newCounters = counters.map((counter) => {
       if (counter.id === counterId) {
@@ -58,12 +60,13 @@ function App() {
           {counters.map((counter) => (
             <Counter
               key={counter.id}
+              count={counter.value}
               onIncrement={() => handleIncrement(counter.id)}
               onDecrement={() => handleDecrement(counter.id)}
             ></Counter>
           ))}
           {/* stats */}
-          <Stats totalCount={10}></Stats>
+          <Stats totalCount={totalCount}></Stats>
         </div>
       </div>
     </>
