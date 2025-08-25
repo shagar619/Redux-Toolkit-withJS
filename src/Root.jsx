@@ -1,11 +1,11 @@
 
-import { Counter } from './components/Counter';
+// import { Counter } from './components/Counter';
 
 const Root = () => {
      return (
           <div>
                Hello world
-               <Counter></Counter>
+               {/* <Counter></Counter> */}
           </div>
      );
 };

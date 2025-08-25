@@ -4,8 +4,6 @@ import Counter from "./components/Counter";
 import Stats from "./components/Stats";
 import { decrement, increment } from "./features/counters/countersSlice";
 
-
-
 // const initialCounters = [
 // {
 //      id: 1,
@@ -17,50 +15,43 @@ import { decrement, increment } from "./features/counters/countersSlice";
 // },
 // ]
 
-
-
-
-
-
 function App() {
 
 
 
 
-// const [ counters, setCounters ] = useState(initialCounters);
+     
+  // const [ counters, setCounters ] = useState(initialCounters);
 
-// const totalCount = counters.reduce((sum, current) => sum + current.value, 0);
+  // const totalCount = counters.reduce((sum, current) => sum + current.value, 0);
 
-// const handleIncrement = (counterId) => {
-//      const newCounters = counters.map((counter) => {
-//      if (counter.id === counterId) {
-//           return {
-//           ...counter,
-//           value: counter.value + 1,
-//      };
-//      } else {
-//           return counter;
-//      }
-//      });
-//           setCounters(newCounters);
-//      };
+  // const handleIncrement = (counterId) => {
+  //      const newCounters = counters.map((counter) => {
+  //      if (counter.id === counterId) {
+  //           return {
+  //           ...counter,
+  //           value: counter.value + 1,
+  //      };
+  //      } else {
+  //           return counter;
+  //      }
+  //      });
+  //           setCounters(newCounters);
+  //      };
 
-// const handleDecrement = (counterId) => {
-//      const newCounters = counters.map((counter) => {
-//      if (counter.id === counterId) {
-//           return {
-//           ...counter,
-//           value: counter.value - 1,
-//      };
-//      } else {
-//           return counter;
-//      }
-//      });
-//           setCounters(newCounters);
-//      };
-
-
-
+  // const handleDecrement = (counterId) => {
+  //      const newCounters = counters.map((counter) => {
+  //      if (counter.id === counterId) {
+  //           return {
+  //           ...counter,
+  //           value: counter.value - 1,
+  //      };
+  //      } else {
+  //           return counter;
+  //      }
+  //      });
+  //           setCounters(newCounters);
+  //      };
 
 
 
@@ -83,14 +74,19 @@ function App() {
           dispatch(decrement(counterId));
      };
 
-return (
-     <>
-     <div className="w-screen h-screen p-10 bg-gray-100 text-slate-700">
-     <h1 className="max-w-md mx-auto text-center text-2xl font-bold">
-          Simple counter Application
-     </h1>
 
-     <div className="max-w-md mx-auto mt-10 space-y-5">
+
+
+
+
+     return (
+     <>
+          <div className="w-screen h-screen p-10 bg-gray-100 text-slate-700">
+               <h1 className="max-w-md mx-auto text-center text-2xl font-bold">
+                    Simple counter Application
+               </h1>
+
+          <div className="max-w-md mx-auto mt-10 space-y-5">
           {counters.map((count) => (
           <Counter
                key={count.id}
@@ -98,15 +94,14 @@ return (
                onIncrement={() => handleIncrement(count.id)}
                onDecrement={() => handleDecrement(count.id)}
           ></Counter>
-     ))}
+          ))}
 
           <Stats totalCount={totalCount}></Stats>
-     </div>
-     </div>
 
-     <Counter></Counter>
+          </div>
+          </div>
      </>
-     );
+);
 }
 
 export default App;
